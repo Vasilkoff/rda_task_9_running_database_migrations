@@ -38,3 +38,17 @@ CREATE TABLE ProductInventory (
     PRIMARY KEY (ID)
 );
 --rollback DROP TABLE ProductInventory;
+
+--changeset o.vasylkov:5 labels:0.0.2
+CREATE TABLE User (
+    ID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(50),
+)
+--rollback DROP TABLE USER
+
+--changeset o.vasylkov:6 labels:0.0.3
+CREATE INDEX Email ON User (Email);
+--rollback DROP INDEX Email ON User;
+
